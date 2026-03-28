@@ -5,143 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Elixir (Ofb Tech Pvt Ltd) - natural extracts, essential oils, oleoresins, and flavors." />
   <title>Elixir (Ofb Tech Pvt Ltd)</title>
-  <style>
-    :root {
-      --bg: #f6f3ec;
-      --bg-2: #ffffff;
-      --text: #1f2a1f;
-      --muted: #5f6d63;
-      --green: #3d6b46;
-      --green-2: #6c8f55;
-      --gold: #c59b35;
-      --card: rgba(255,255,255,0.9);
-      --border: rgba(31,42,31,0.08);
-      --shadow: 0 18px 50px rgba(44, 62, 45, 0.12);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(197,155,53,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(108,143,85,0.18), transparent 22%),
-        linear-gradient(180deg, #faf8f2 0%, var(--bg) 100%);
-    }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: 3px solid rgba(61,107,70,.35); outline-offset: 3px; }
-    .topbar {
-      position: sticky; top: 0; z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(246,243,236,0.82);
-      border-bottom: 1px solid var(--border);
-    }
-    .wrap { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1rem; }
-    .brand { display: flex; align-items: center; gap: .8rem; font-weight: 800; }
-    .mark {
-      width: 46px; height: 46px; border-radius: 14px;
-      display: grid; place-items: center; color: white;
-      background: linear-gradient(135deg, var(--green), var(--gold)); box-shadow: var(--shadow);
-    }
-    .links { display: flex; gap: 1.2rem; flex-wrap: wrap; color: var(--muted); font-weight: 600; }
-    .hero { padding: 3.5rem 0 2rem; }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; }
-    .eyebrow { color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: .82rem; }
-    h1 { font-size: clamp(2.6rem, 5vw, 5.2rem); line-height: .96; margin: .5rem 0 1rem; }
-    .lead { font-size: 1.12rem; color: var(--muted); max-width: 60ch; line-height: 1.7; }
-    .cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.5rem; }
-    .btn {
-      padding: .95rem 1.3rem; border-radius: 999px; font-weight: 700; border: 1px solid transparent;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
-    .primary { background: linear-gradient(135deg, var(--green), var(--green-2)); color: white; }
-    .secondary { background: rgba(255,255,255,.78); border-color: var(--border); }
-    .hero-card {
-      background: var(--card); border: 1px solid var(--border); border-radius: 30px; padding: 1.2rem;
-      box-shadow: var(--shadow);
-    }
-    .hero-image {
-      min-height: 520px; border-radius: 24px; overflow: hidden; position: relative;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.28)),
-        url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=80') center/cover;
-    }
-    .hero-image .overlay {
-      position: absolute; inset: auto 0 0 0; padding: 1.5rem; color: white;
-      background: linear-gradient(180deg, transparent, rgba(0,0,0,.65));
-    }
-    .stats, .cards, .footer-grid { display: grid; gap: 1rem; }
-    .stats { grid-template-columns: repeat(3, 1fr); margin: 2rem 0 0; }
-    .stat, .card, .panel {
-      background: rgba(255,255,255,.82); border: 1px solid var(--border); border-radius: 24px; padding: 1.2rem;
-      box-shadow: 0 10px 30px rgba(31,42,31,.06);
-    }
-    .stat strong { display: block; font-size: 1.8rem; color: var(--green); }
-    section { padding: 2rem 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 1rem; }
-    .section-head p { margin: 0; color: var(--muted); max-width: 60ch; }
-    .cards { grid-template-columns: repeat(3, 1fr); }
-    .card h3, .panel h3 { margin-top: 0; }
-    .feature-list { display: grid; gap: .8rem; }
-    .feature { display: flex; gap: .8rem; align-items: flex-start; padding: .7rem 0; border-top: 1px solid var(--border); }
-    .badge { width: 34px; height: 34px; border-radius: 12px; background: rgba(61,107,70,.12); display:grid; place-items:center; flex: 0 0 auto; }
-    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .product { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
-    .product small { color: var(--muted); display: block; margin-top: .35rem; }
-    .certs { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .certs span {
-      padding: .8rem 1rem; background: white; border: 1px solid var(--border); border-radius: 999px; color: var(--muted);
-      font-weight: 600;
-    }
-    .footer {
-      margin-top: 2rem; padding: 2rem 0 3rem; border-top: 1px solid var(--border); color: var(--muted);
-    }
-    .footer-grid { grid-template-columns: 1.1fr .9fr .9fr; }
-    .mobile-menu { display: none; }
-    @media (max-width: 920px) {
-      .wrap { width: min(1180px, calc(100% - 1.1rem)); }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .links { display: flex; gap: .75rem; width: 100%; overflow-x: auto; padding-bottom: .25rem; }
-      .links a { white-space: nowrap; }
-      .hero-grid, .cards, .product-grid, .footer-grid, .stats { grid-template-columns: 1fr; }
-      .hero { padding-top: 2rem; }
-      .hero-image { min-height: 320px; }
-      .section-head { flex-direction: column; align-items: flex-start; }
-      .section-head p { max-width: none; }
-      .product { align-items: flex-start; flex-direction: column; }
-      .cta { width: 100%; }
-      .btn { width: 100%; text-align: center; }
-      .certs span { width: 100%; text-align: center; }
-      .footer-grid { gap: 1.4rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <div class="brand"><div class="mark">E</div><div>Elixir<br><span style="font-weight:600;color:var(--muted);font-size:.85rem;">Ofb Tech Pvt Ltd</span></div></div>
+      <a class="brand" href="index.html"><div class="mark">E</div><div>Elixir<br><span style="font-weight:600;color:var(--muted);font-size:.85rem;">Ofb Tech Pvt Ltd</span></div></a>
       <nav class="links">
-        <a href="#about">About Us</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact Us</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="hero">
+    <section class="page-hero">
       <div class="hero-grid">
         <div>
           <div class="eyebrow">Assortment of natural spices and herbs</div>
           <h1>Pure Extracts for a Healthier World</h1>
           <p class="lead">Discover our premium range of natural extracts, essential oils, and oleoresins, crafted for purity, potency, and performance across food, pharma, cosmetics, and wellness applications.</p>
           <div class="cta">
-            <a class="btn primary" href="#products">Explore Our Products</a>
-            <a class="btn secondary" href="#contact">Get in Touch</a>
+            <a class="btn primary" href="products.html">Explore Our Products</a>
+            <a class="btn secondary" href="contact.html">Get in Touch</a>
           </div>
           <div class="stats">
             <div class="stat"><strong>2003</strong><span>Established legacy</span></div>
@@ -160,7 +48,7 @@
       </div>
     </section>
 
-    <section id="about">
+    <section>
       <div class="section-head">
         <div>
           <div class="eyebrow">Our Commitment to Excellence</div>
@@ -169,71 +57,9 @@
         <p>Established in 2003, Elixir (Ofb Tech Pvt Ltd) has grown into a seasoned manufacturer, exporter, and dealer of premium herb and spice-based products.</p>
       </div>
       <div class="cards">
-        <div class="card"><h3>Potent</h3><p>Concentrated efficacy for maximum impact and superior results in every application.</p></div>
-        <div class="card"><h3>Pure</h3><p>Unadulterated ingredients, naturally sourced and meticulously processed for unparalleled purity.</p></div>
-        <div class="card"><h3>High Quality</h3><p>Rigorous standards and stringent quality control from raw material to final product.</p></div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Ethical Sourcing</div>
-          <h2 style="margin:.35rem 0 0;">Purity from Nature's Own Habitats</h2>
-        </div>
-        <p>We meticulously source our raw materials from their natural habitats, with scientific pre-processing for cleaning, crushing, and foreign matter removal.</p>
-      </div>
-      <div class="panel">
-        <div class="feature-list">
-          <div class="feature"><div class="badge">1</div><div><strong>Wild-collected sourcing</strong><div>Selected materials from trusted natural habitats.</div></div></div>
-          <div class="feature"><div class="badge">2</div><div><strong>Pre-processing excellence</strong><div>Cleaning, crushing, and preparation with disciplined quality checks.</div></div></div>
-          <div class="feature"><div class="badge">3</div><div><strong>Consistent supply</strong><div>Reliable operations for business-critical manufacturing needs.</div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="products">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Our Diverse Product Portfolio</div>
-          <h2 style="margin:.35rem 0 0;">Elixir Extracts specializes in a comprehensive range of high-quality natural products.</h2>
-        </div>
-        <p>Serving sectors from food and beverage to pharmaceuticals and cosmetics.</p>
-      </div>
-      <div class="product-grid">
-        <a class="card product" href="#contact"><div><h3>Standardized Natural Extracts</h3><small>Potent botanical compounds for targeted applications.</small></div><strong>View Product</strong></a>
-        <a class="card product" href="#contact"><div><h3>Essential Oils</h3><small>Pure aromatic essences for fragrance, flavor, and wellness.</small></div><strong>View Product</strong></a>
-        <a class="card product" href="#contact"><div><h3>Oleoresins</h3><small>Concentrated flavor and aroma profiles derived from premium spices.</small></div><strong>View Product</strong></a>
-        <a class="card product" href="#contact"><div><h3>Flavours</h3><small>Custom-blended natural flavors for food and beverage innovation.</small></div><strong>View Product</strong></a>
-        <a class="card product" href="#contact"><div><h3>Micro Encapsulated Oils & Oleoresins</h3><small>Enhanced stability and controlled release for advanced formulations.</small></div><strong>View Product</strong></a>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Committed to Global Standards</div>
-          <h2 style="margin:.35rem 0 0;">Our Certifications & Industry Associations</h2>
-        </div>
-      </div>
-      <div class="certs">
-        <span>FSSAI Certified</span>
-        <span>GMP Certified</span>
-        <span>Drugs Control Department Approved</span>
-        <span>Indian Register Quality Systems Certified</span>
-        <span>KLBD Kosher Certified</span>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="panel">
-        <div class="section-head" style="margin-bottom:0;">
-          <div>
-            <div class="eyebrow">Ready to Partner?</div>
-            <h2 style="margin:.35rem 0 0;">Whether you need custom formulations or want to explore our range, we’re ready to help.</h2>
-          </div>
-          <div class="cta"><a class="btn primary" href="#products">View All Products</a><a class="btn secondary" href="mailto:info@ofbtech.in">Get in Touch</a></div>
-        </div>
+        <a class="card" href="about.html"><h3>Potent</h3><p>Concentrated efficacy for maximum impact and superior results in every application.</p></a>
+        <a class="card" href="products.html"><h3>Pure</h3><p>Unadulterated ingredients, naturally sourced and meticulously processed for unparalleled purity.</p></a>
+        <a class="card" href="services.html"><h3>High Quality</h3><p>Rigorous standards and stringent quality control from raw material to final product.</p></a>
       </div>
     </section>
   </main>
@@ -246,7 +72,7 @@
       </div>
       <div>
         <h3 style="color:var(--text);">Quick Links</h3>
-        <p>Home<br>About Us<br>Products<br>Services<br>Quality Certifications<br>Contact Us</p>
+        <p><a href="about.html">About Us</a><br><a href="products.html">Products</a><br><a href="services.html">Services</a><br><a href="contact.html">Contact Us</a></p>
       </div>
       <div>
         <h3 style="color:var(--text);">Legal</h3>
