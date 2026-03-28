@@ -113,6 +113,7 @@ section { padding: 2rem 0; }
   .nav { align-items: flex-start; flex-direction: column; }
   .links { width: 100%; overflow-x: auto; padding-bottom: .25rem; }
   .links a { white-space: nowrap; }
+  .theme-toggle { width: 100%; }
   .hero-grid, .cards, .product-grid, .footer-grid, .stats, .content-grid, .page-grid { grid-template-columns: 1fr; }
   .page-hero { padding-top: 2rem; }
   .hero-image { min-height: 300px; }
@@ -125,5 +126,5 @@ section { padding: 2rem 0; }
   .footer-grid { gap: 1.4rem; }
 }
 
-.theme-toggle { background: rgba(255,255,255,.65); border: 1px solid var(--border); color: var(--text); }
+.theme-toggle { background: rgba(255,255,255,.65); border: 1px solid var(--border); color: var(--text); white-space: nowrap; flex: 0 0 auto; min-width: 128px; }
 :root[data-theme="dark"] .theme-toggle { background: rgba(255,255,255,.05); }
