@@ -47,12 +47,12 @@
   const root = document.documentElement;
   const saved = localStorage.getItem(key);
   const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = saved || (preferDark ? "dark" : "light");
+  root.setAttribute("data-theme", saved || (preferDark ? "dark" : "light"));
   const btn = document.getElementById("themeToggle");
   if (btn) {
     btn.addEventListener("click", () => {
-      const next = root.dataset.theme === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
       localStorage.setItem(key, next);
     });
   }
