@@ -17,7 +17,7 @@
         <a href="services.html">Services</a>
         <a href="contact.html">Contact Us</a>
       </nav>
-      <button class="btn secondary theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light theme">Toggle theme</button>
+      <button class="btn secondary theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light theme">Dark mode</button>
     </div>
   </header>
   <main class="wrap">
@@ -35,22 +35,6 @@
     </section>
   </main>
   <footer class="footer"><div class="wrap">© Elixir (Ofb Tech Pvt Ltd) All rights reserved.</div></footer>
-<script>
-(function(){
-  const key = "elixir-theme";
-  const root = document.documentElement;
-  const saved = localStorage.getItem(key);
-  const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  root.setAttribute("data-theme", saved || (preferDark ? "dark" : "light"));
-  const btn = document.getElementById("themeToggle");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem(key, next);
-    });
-  }
-})();
-</script>
+<script src="theme.js"></script>
 </body>
 </html>
